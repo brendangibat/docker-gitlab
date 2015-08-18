@@ -522,7 +522,7 @@ sudo -HEu ${GITLAB_USER} sed 's/{{LDAP_LABEL}}/'"${LDAP_LABEL}"'/' -i config/git
 # apply aws s3 backup configuration
 case ${AWS_BACKUPS} in
   true)
-    if [[ -z ${AWS_BACKUP_REGION} || -z ${AWS_BACKUP_ACCESS_KEY_ID} || -z ${AWS_BACKUP_SECRET_ACCESS_KEY} || -z ${AWS_BACKUP_BUCKET} ]]; then
+    if [[ -z ${AWS_BACKUP_REGION} || -z ${AWS_BACKUP_BUCKET} ]]; then
       printf "\nMissing AWS options. Aborting...\n"
       exit 1
     fi
